@@ -213,18 +213,6 @@ a:hover
     justify-content: center;
 }
 
-@media (max-width:1200px){
-    .todo-header
-    {
-        display: none;
-    }
-
-    .version-footer
-    {
-        display: none;
-    }
-}
-
 .todo-header
 {
     padding:20px;
@@ -258,4 +246,19 @@ a:hover
     bottom: 0;
     font-weight: 100;
     font-size: .8rem;
+}
+
+@media (max-width:800px)
+{
+    .main-panel
+    {
+        max-width:70vw;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .version-footer
+    {
+        display: none;
+    }
 }
