@@ -148,7 +148,7 @@
 
     async function populateGallery()
     {
-        const gallery_json_data = await getJsonGalleryData("/../json/gallery_data.json");
+        const gallery_json_data = await getJsonGalleryData("../../json/gallery_data.json");
         const gallery_items = gallery_json_data.galleryItems;
 
         if(gallery_items.length>0)
