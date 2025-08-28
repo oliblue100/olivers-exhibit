@@ -7,7 +7,7 @@
     "galleryItems":
     [
         {
-            "src":"../images/art/alley.JPG",
+            "src":"../../images/art/alley.JPG",
             "name":"Alley Scoundrell",
             "portrait":true,
             "positionX":0,
