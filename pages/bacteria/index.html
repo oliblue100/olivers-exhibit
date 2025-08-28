@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="../../css/style.css">
+</head>
+<body>
+  
+    <header style="height:.7in;display: flex;justify-content: center;">
+    <div class="todo-header">
+      <a href="../../">Go back</a>
+    </div>
+    <div class="page-nav" style="display: flex;">
+      <div class="page-nav-container" style="
+        display: flex;
+        height:.5in;
+        ">
+        <ul style="
+          display: flex;
+          justify-content: space-around;
+          padding: 10px;
+          margin: 0;
+          list-style: none;
+          border: solid;
+          text-align: center;
+          width:6.5in;
+          ">
+          <li><a href="/">Home</a></li>
+          <li><a href="/pages/gallery" id="blog-link">The Gallery</a></li>
+          <li><a href="/pages/wip">Cool Links</a></li>
+          <li><a href="/pages/wip">Projects</a></li>
+          <a href="/pages/about">About</a>
+
+        </ul>
+      </div>
+    </div>
+  </header>
+
+    <div style="display:flex;width:100%;height:100%;justify-content: center;align-items:center;">
+        <div style="width:50%; margin-top:12vh;">
+            
+<div id="pixi-container">
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/8.11.0/pixi.min.js"></script>
+<script>
+    import { Application, Assets, Container, Sprite } from 
+    'pixi.js';
+
+    (async () => {
+        const app = new Application();
+
+        await app.init({ background: '#1099bb', resizeTo: 
+        window });
+
+        document.getElementById("pixi-container").appendChild(app.canvas);
+
+        const container = new Container();
+
+        app.stage.addChild(container);
+
+        const texture = await Assets.load('https://pixijs.com/assets/bunny.png');
+
+        for (let i=0; i<25;i++) {
+            const bunny = new Sprite(texture);
+
+            bunny.x = (i%5) * 40;
+            bunny.y = Math.floor(i/5)*40;
+            container.addChild(bunny);
+
+            container.x = app.screen.width / 2;
+            container.y = app.screen.height / 2;
+
+            container.pivot.x = container.width / 2;
+            container.pivot.y = container.height / 2;
+
+            app.ticker.add((time) => {
+                container.rotation -= .01 * time.deltaTime;
+        });
+        }
+    })();
+</script>
+        </div>
+    </div>
+
+</body>
+</html>

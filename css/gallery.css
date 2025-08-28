@@ -1,0 +1,120 @@
+html {
+            overflow-y: scroll;
+        }
+        .fade-in
+        {
+            opacity: 0;
+            transition: opacity 2s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+        }
+
+        .gallery-item
+        {
+            width:220px;
+            height:max-content;
+            overflow: hidden;
+            transition: opacity 1s ease, transform .3s ease, filter .3s ease;
+        }
+
+        .gallery-item:hover
+        {
+            cursor: pointer;
+            transform: scale(1.1);
+            filter: drop-shadow(0px 0px 15px rgb(51, 255, 0));
+        }
+
+        .gallery-item .img-container
+        {
+            aspect-ratio: 1;
+            overflow: hidden;
+        }
+        .gallery-item h4
+        {
+            text-align:center;
+        }
+
+        .gallery-panel
+        {
+            display:grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            row-gap:20px;
+            column-gap: 60px;
+            align-content: start;
+            margin:0;
+            padding:0;
+        }
+
+        .outline
+        {
+            outline: solid;
+            outline-color: red;
+        }
+
+        .gallery-item-portrait
+        {
+            width: 100%;
+            height:auto;
+        }
+
+        .gallery-item-landscape
+        {
+            height:100%;
+            width:auto;
+        }
+
+        /*gallery viewer*/
+
+
+
+        #gallery-viewer
+        {
+            background-color: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            top:0;
+            width:100%;
+            height:100%;
+            z-index:1;
+            padding:0;
+            margin:0;
+            transition: opacity ease 1s;
+        }
+
+        #gallery-viewer.hidden
+        {
+            opacity: 0;
+        }
+
+        #gallery-viewer-nav
+        {
+            display:grid;
+            grid-template-columns: 1fr 4fr 1fr;
+            width:100%;
+            height:100%;
+        }
+
+        .gallery-viewer-btn
+        {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gallery-viewer-btn button
+        {
+            width:40px;
+            height: 120px;
+            color: black;
+        }
+
+        .gallery-viewer-btn button:hover
+        {
+            cursor: pointer;
+        }
+
+        #gallery-viewer-close:hover
+        {
+            cursor: pointer;
+            color:white;
+        }

@@ -1,0 +1,94 @@
+{
+    "quotes":
+    [
+        "Necessity is the mother of all invention, but laziness is the Father.",
+        "If you are not applying the concepts to solve something, you are not learning."
+    ],
+    "galleryItems":
+    [
+        {
+            "src":"../../images/art/alley.jpg",
+            "name":"Alley Scoundrell",
+            "portrait":true,
+            "positionX":0,
+            "positionY":-70
+        },
+        {
+            "src":"../../images/art/yarn.PNG",
+            "name":"Yarn.",
+            "portrait":true,
+            "positionX":0,
+            "positionY":-60
+        },
+        {
+            "src":"../../images/art/play.png",
+            "name":"Playful",
+            "portrait":true,
+            "positionX":-50,
+            "positionY":0
+        },
+        {
+            "src":"../../images/art/cat_concept.jpg",
+            "name":"Cat Concept",
+            "portrait":true,
+            "positionX":0,
+            "positionY":-40
+        },
+        {
+            "src":"../../images/art/lion_sculpt.PNG",
+            "name":"Lion",
+            "portrait":true,
+            "positionX":-55,
+            "positionY":0
+        },
+        {
+            "src":"../../images/art/Handsome.PNG",
+            "name":"Handsome Head",
+            "portrait":true,
+            "positionX":0,
+            "positionY":-40
+        },
+        {
+            "src":"../../images/art/doodle1.PNG",
+            "name":"Doodle 1",
+            "portrait":true,
+            "positionX":0,
+            "positionY":0
+        },
+        {
+            "src":"../../images/art/doodle2.JPG",
+            "name":"Doodle 2",
+            "portrait":true,
+            "positionX":-50,
+            "positionY":0
+        },
+        {
+            "src":"../../images/art/doodle3.PNG",
+            "name":"Doodle 3",
+            "portrait":true,
+            "positionX":0,
+            "positionY":0
+        },
+        {
+            "src":"../../images/art/doodle4.jpg",
+            "name":"Doodle 4",
+            "portrait":true,
+            "positionX":-50,
+            "positionY":0
+        },
+        {
+            "src":"../../images/art/doodle5.PNG",
+            "name":"Doodle 5",
+            "portrait":true,
+            "positionX":-40,
+            "positionY":0
+        },
+        {
+            "src":"../../images/photos/cats.JPG",
+            "name":"Cats in the Window",
+            "portrait":true,
+            "positionX":-20,
+            "positionY":0
+        }
+    ]
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" type="text/css" href="../../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../css/gallery.css">
+
+</head>
+<body>
+    <div class="page-nav" style="display: flex; justify-content: center;">
+      <div class="page-nav-container" style="
+        display: flex;
+        height:.5in;
+        ">
+        <ul style="
+          display: flex;
+          justify-content: space-around;
+          padding: 10px;
+          margin: 0;
+          list-style: none;
+          border: solid;
+          text-align: center;
+          width:6.5in;
+          ">
+          <li><a href="/">Home</a></li>
+          <li><a href="/pages/gallery" id="blog-link">The Gallery</a></li>
+          <li><a href="/pages/wip">Cool Links</a></li>
+          <li><a href="/pages/wip">Projects</a></li>
+          <a href="/pages/about">About</a>
+
+        </ul>
+      </div>
+    </div>
+    <div id="gallery-viewer" class="hidden" style="display:none;">
+        <div id="gallery-viewer-close" style="position: fixed;font-size: 2rem;right:15px;top:15px;">X</div>
+        <div id="gallery-viewer-nav">
+            <div class="gallery-viewer-btn">
+                <button id="gallery-viewer-btn-left">&lt;</button>
+            </div>
+            <div style="flex-direction:column;display:flex;justify-content: center;align-items: center;">
+                <img id="gallery-view-img" src="../../images/art/doodle1.PNG" style="height:600px;width:auto;">
+                <h1 id="gallery-view-title" style="font-size: 1.5rem;">Title</h1>
+            </div>
+            <div class="gallery-viewer-btn">
+                <button id="gallery-viewer-btn-right">&gt;</button>
+            </div>
+        </div>
+
+        
+        </div>
+    <div class="todo-header">
+        <a href="../../">Go back</a>
+    </div>
+    <div class="main-container" style="justify-content:start;">
+        <div style="
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            width:80%;
+            height:100px;">
+            <h1>The Gallery</h1>
+        </div>
+        <div id="gallery-panel" class="gallery-panel">
+            
+            
+        </div>
+    </div>
+    
+    <script src="../../js/gallery.js"></script>
+
+</body>
+</html>

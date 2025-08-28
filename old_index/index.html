@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oliver's Hangar</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div id="main-container-id" class="main-container">
+        <div class="main-panel">
+            <h2>Oliver's Hangar</h2> 
+            <div class="nav-bar">
+                <a>My Blog</a>
+                <a>The Gallery</a>
+                <a>Cool Links</a>
+                <a>Projects</a>
+            </div>
+            <div class="hero">
+                <div class="hero-content">
+                    <h3>The coolect place ever.</h3>
+                    <p>Welcome to what I believe to be
+                        the pinnacle of modern creative expression, the fascinating world of web development.
+                    </p>
+                    <p>
+                        No, I'm not talking about this website. But rather, the idea of the internet as a whole.
+                    </p>
+                </div>
+                <div class="blog-list">
+                    <h3>Article List</h3>
+                    <ul>
+                        <li>The Infinite Canvas</li>
+                        <li>Pursuit of Knowledge</li>
+                        <li>How to write a terrible biography</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <p>Having a website is basically having an infinite canvas.</p>
+            
+        </div>
+        <div class="todo-header">
+            <span>TODO:</span>
+            <ul>
+                <li>Implement 11TY features</li>
+                <li>Come up with better writing...</li>
+                <li>Custom background</li>
+            </ul>
+        </div>
+        <div class="version-footer">
+            Version: 1.0
+            <br>
+            Last update: 6/15/2025
+        </div>
+    </div>
+
+    <script>
+
+        let myColors = [
+            {
+                index:0,
+                color:"#B52323"
+            },
+            {
+                index:0,
+                color:"#4ed530"
+            },
+            {
+                index:0,
+                color:"#3458e6"
+            },
+            {
+                index:0,
+                color:"#e300b2"
+            },
+            {
+                index:0,
+                color:"#fb0000"
+            },
+            {
+                index:0,
+                color:"#00fff2"
+            },
+        ];
+        
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
+        }
+
+        let chooseColor = getRandomInt(myColors.length);
+        console.log(chooseColor);
+
+        let x = document.getElementById("main-container-id")
+        x.style.color=myColors[chooseColor].color;
+        console.log(myColors);
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Things Learned Today 7/6/2025</title>
+  <link rel="stylesheet" type="text/css" href="../../css/style.css">
+</head>
+<body>
+
+  <header style="height:.7in;display: flex;justify-content: center;">
+    <div class="todo-header">
+      <a href="../../">Go back</a>
+    </div>
+    <div class="page-nav" style="display: flex;">
+      <div class="page-nav-container" style="
+        display: flex;
+        height:.5in;
+        ">
+        <ul style="
+          display: flex;
+          justify-content: space-around;
+          padding: 10px;
+          margin: 0;
+          list-style: none;
+          border: solid;
+          text-align: center;
+          width:6.5in;
+          ">
+          <li><a href="/">Home</a></li>
+          <li><a href="/pages/gallery" id="blog-link">The Gallery</a></li>
+          <li><a>Cool Links</a></li>
+          <li><a href="/pages/projects">Projects</a></li>
+
+        </ul>
+      </div>
+    </div>
+  </header>
+  
+  <div style="display:flex;flex-direction: column;" id="post-container-id" class="post-container">
+    <div class="post-panel">
+      <h1>My First Post</h1>
+<h3>I'm going to start documenting all the new things I pick up as I learn web development.</h3>
+<ol>
+<li>In CSS, I should use the transform attribute for visuals, instead of width/height. Using transform wont affect the layout</li>
+<li>In JS, the difference between for(item in n) vs for(item of n) - &quot;in&quot; returns an index, which naturally can make code harder to read when you use array index. On the other hand, &quot;of&quot; returns the actual object, and so you can write item.style for example, no need to index yourself. Supposedly its also slightly less error-prone, but its not a huge difference.</li>
+<li>fetch needs a particular sequence. its first fetch(url).then(return=&gt;{response}).then((data)=&gt;{this is where you work with data}).catch((err)=&gt;{where errors are handled}). fetch also returns a promise, so I can also do (const data = await fetch(url); )</li>
+</ol>
+
+    </div>
+  </div>
+
+</body>
+</html>
