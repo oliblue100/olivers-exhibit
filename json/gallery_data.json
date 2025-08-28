@@ -7,7 +7,11 @@
     "galleryItems":
     [
         {
+<<<<<<< HEAD
             "src":"../../images/art/alley.jpg",
+=======
+            "src":"../../images/art/alley.JPG",
+>>>>>>> 683c38f800e0c5c92b316fe7377e8d0c69627152
             "name":"Alley Scoundrell",
             "portrait":true,
             "positionX":0,
