@@ -7,7 +7,7 @@
     "galleryItems":
     [
         {
-            "src":"../images/art/alley.jpg",
+            "src":"../../images/art/alley.jpg",
             "name":"Alley Scoundrell",
             "portrait":true,
             "positionX":0,
@@ -21,14 +21,14 @@
             "positionY":-60
         },
         {
-            "src":"../../images/art/play.png",
+            "src":"../../images/art/play.PNG",
             "name":"Playful",
             "portrait":true,
             "positionX":-50,
             "positionY":0
         },
         {
-            "src":"../../images/art/cat_concept.jpg",
+            "src":"../../images/art/cat_concept.JPG",
             "name":"Cat Concept",
             "portrait":true,
             "positionX":0,
@@ -81,13 +81,6 @@
             "name":"Doodle 5",
             "portrait":true,
             "positionX":-40,
-            "positionY":0
-        },
-        {
-            "src":"../../images/photos/cats.JPG",
-            "name":"Cats in the Window",
-            "portrait":true,
-            "positionX":-20,
             "positionY":0
         }
     ]
