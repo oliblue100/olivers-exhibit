@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="../../css/style.css">
+</head>
+<body>
+  
+    <header style="height:.7in;display: flex;justify-content: center;">
+    <div class="todo-header">
+      <a href="../../">Go back</a>
+    </div>
+    <div class="page-nav" style="display: flex;">
+      <div class="page-nav-container" style="
+        display: flex;
+        height:.5in;
+        ">
+        <ul style="
+          display: flex;
+          justify-content: space-around;
+          padding: 10px;
+          margin: 0;
+          list-style: none;
+          border: solid;
+          text-align: center;
+          width:6.5in;
+          ">
+          <li><a href="/olivers-exhibit/">Home</a></li>
+          <li><a href=/olivers-exhibit/pages/gallery/ id="blog-link">The Gallery</a></li>
+          <li><a href=/olivers-exhibit/pages/wip>Cool Links</a></li>
+          <li><a href="/olivers-exhibit/pages/projects">Projects</a></li>
+          <a href=/olivers-exhibit/pages/about>About</a>
+
+        </ul>
+      </div>
+    </div>
+  </header>
+
+    <div style="display:flex;width:100%;height:100%;justify-content: center;align-items:center;">
+        <div style="width:50%; margin-top:12vh;">
+            <style>
+#main-container{
+    display: flex;
+}
+
+#pizza-img{
+    image-rendering: pixelated;
+    max-width: 400px;
+    min-width: 0;
+    min-height: 0;
+    aspect-ratio: 1;
+    object-fit: contain;
+}
+
+#pizza-container
+{
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: start;
+}
+
+@media (max-width:1000px) {
+    #main-container
+    {
+        flex-direction: column;
+    }
+
+    #pizza-container
+    {
+        flex-direction: row;
+    }
+}
+
+</style>
+
+
+<div id="main-container">
+    <div style="width:70%">
+        <h3>Enter flour amount in cups</h3>
+        <input id="userInput">
+
+        <h3>You will need:</h3>
+        <ul style="list-style: none;margin: 0;padding: 0;">
+            <li id="flour">0 cups of flour</li>
+            <li id="water">0 cups of water</li>
+            <li id="yeast">0 tsp of yeast</li>
+            <li id="oliveoil">0 tbsp of olive oil</li>
+            <li id="sugar">0 tsp of sugar</li>
+            <li id="salt">0 tsp of salt</li>
+        </ul>
+
+        <br>
+        <h3 id="yield">Yields: </h3>
+        <br>
+        <h3 id="small-yield-text"></h3>
+        <h3 id="small-yield"></h3>
+        <br>
+        <h3 id="message"></h3>
+    </div>
+    <div id="pizza-container"style="">
+        <img id="pizza-img" src="../../images/misc/lame-pizza.png">
+    </div>
+    
+</div>
+
+
+<script>
+    const userInput = document.getElementById("userInput");
+
+    let flourOutput = document.getElementById("flour");
+    let waterOutput = document.getElementById("water");
+    let yeastOutput = document.getElementById("yeast");
+    let oliveOilOutput = document.getElementById("oliveoil");
+    let sugarOutput = document.getElementById("sugar");
+    let saltOutput = document.getElementById("salt");
+    let yield = document.getElementById("yield");
+    let smallYield = document.getElementById("small-yield");
+    let smallYieldText = document.getElementById("small-yield-text");
+
+    let messageDisplayed = false;
+
+    userInput.addEventListener("input", ()=>{
+        updateFlour();
+        updateWater();
+        updateYeast();
+        updateOliveOil();
+        updateSugar();
+        updateSalt();
+        updateYield();
+        youNeedHelp();
+        console.log("input changed!");
+    });
+
+    function updateFlour()
+    {
+        flourOutput.innerText = (userInput.value + " cups of flour").toString();
+    }
+
+    function updateWater()
+    {
+        const result = (userInput.value * .38).toString().slice(0,4);
+        waterOutput.innerText = result + " cups of water";
+    }
+
+    function updateYeast()
+    {
+        const result = convertCupsToTsp((userInput.value * .0134)).toString().slice(0,4);
+        yeastOutput.innerText = result + " tsp of yeast";
+    }
+
+    function updateOliveOil()
+    {
+        const result = convertCupsToTbsp((userInput.value * .036)).toString().slice(0,4);
+        oliveOilOutput.innerText = result + " tbsp of olive oil";
+    }
+
+    function updateSugar()
+    {
+        const result = convertCupsToTsp((userInput.value * .006)).toString().slice(0,4);
+        sugarOutput.innerText = result + " tsp of sugar";
+    }
+
+    function updateSalt()
+    {
+        const result = convertCupsToTsp((userInput.value * .012)).toString().slice(0,4);
+        saltOutput.innerText = result + " tbsp of salt";
+    }
+
+    function updateYield()
+    {
+        //Values relative to cups of flour
+        const largePizzaCrust = 1.75;
+        const smallPizzaCrust = .875;
+        let largeResult = Math.trunc(userInput.value / largePizzaCrust);
+        let smallResult = Math.trunc(userInput.value / smallPizzaCrust);
+        let smallWithLargeResult = Math.trunc((userInput.value % largePizzaCrust) / smallPizzaCrust);
+        
+
+        result = "Yields ";
+        if(largeResult <1)
+        {
+            if(smallWithLargeResult > 0)
+            {
+                result = result + smallResult + " small pizza crust";
+            }
+        }
+        else if (largeResult == 1)
+        {
+            result = result + "1 large Pizza crust";
+            if(smallWithLargeResult>0){
+                result = result + " & " + smallWithLargeResult + " small pizza crust";
+            }
+        } else {
+            result = result + largeResult + " large Pizza crusts";
+            if(smallWithLargeResult>0){
+                result = result + " & " + smallWithLargeResult + " small pizza crust";
+            }
+        }
+
+        yield.innerText = result;
+
+        result = "";
+        
+        if(smallResult > 1)
+        {
+            smallYieldText.innerText="Or:";
+            result = result + smallResult + " small pizza crusts";
+        } else {
+            smallYieldText.innerText="";
+        }
+        smallYield.innerText = result;
+    }
+
+    function youNeedHelp()
+    {
+
+        if (userInput.value > 100 & messageDisplayed == false)
+        {
+            let random = chooseRandomNum(5);
+            let msg = "";
+            console.log(random);
+
+            if(random==0){
+                msg="Whats your problem?";
+            } else if(random==1){
+                msg="Are you ok?";
+            } else if(random==2){
+                msg="Dude, nobody needs that much";
+            } else if(random==3){
+                msg="You need help.";
+            } else if(random==4){
+                msg="..Why do you need that many?";
+            }
+
+            document.getElementById("message").innerText = msg;
+            messageDisplayed = true;
+
+        } else if(userInput.value <= 100){
+            messageDisplayed = false;
+            document.getElementById("message").innerText = "";
+        } else {
+
+        }
+
+        
+    }
+
+    function chooseRandomNum(max)
+    {
+        let rand = Math.trunc(Math.random()*max);
+        return rand;
+    }
+
+    function convertCupsToTsp(cups)
+    {
+        return cups * 48;
+    }
+
+    function convertCupsToTbsp(cups)
+    {
+        return cups * 16;
+    }
+</script>
+        </div>
+    </div>
+
+</body>
+</html>
