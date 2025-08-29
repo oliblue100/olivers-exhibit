@@ -7,63 +7,63 @@
     "galleryItems":
     [
         {
-            "src":"../../images/art/alley.JPG",
+            "src":"../../images/art/alley.jpg",
             "name":"Alley Scoundrell",
             "portrait":true,
             "positionX":0,
             "positionY":-70
         },
         {
-            "src":"../../images/art/yarn.PNG",
+            "src":"../../images/art/yarn.jpg",
             "name":"Yarn.",
             "portrait":true,
             "positionX":0,
             "positionY":-60
         },
         {
-            "src":"../../images/art/play.PNG",
+            "src":"../../images/art/play.jpg",
             "name":"Playful",
             "portrait":true,
             "positionX":-50,
             "positionY":0
         },
         {
-            "src":"../../images/art/cat_concept.JPG",
+            "src":"../../images/art/cat_concept.jpg",
             "name":"Cat Concept",
             "portrait":true,
             "positionX":0,
             "positionY":-40
         },
         {
-            "src":"../../images/art/lion_sculpt.PNG",
+            "src":"../../images/art/lion_sculpt.jpg",
             "name":"Lion",
             "portrait":true,
             "positionX":-55,
             "positionY":0
         },
         {
-            "src":"../../images/art/Handsome.PNG",
+            "src":"../../images/art/Handsome.jpg",
             "name":"Handsome Head",
             "portrait":true,
             "positionX":0,
             "positionY":-40
         },
         {
-            "src":"../../images/art/doodle1.PNG",
+            "src":"../../images/art/doodle1.jpg",
             "name":"Doodle 1",
             "portrait":true,
             "positionX":0,
             "positionY":0
         },
         {
-            "src":"../../images/art/doodle2.JPG",
+            "src":"../../images/art/doodle2.jpg",
             "name":"Doodle 2",
             "portrait":true,
             "positionX":-50,
             "positionY":0
         },
         {
-            "src":"../../images/art/doodle3.PNG",
+            "src":"../../images/art/doodle3.jpg",
             "name":"Doodle 3",
             "portrait":true,
             "positionX":0,
@@ -77,7 +77,7 @@
             "positionY":0
         },
         {
-            "src":"../../images/art/doodle5.PNG",
+            "src":"../../images/art/doodle5.jpg",
             "name":"Doodle 5",
             "portrait":true,
             "positionX":-40,
