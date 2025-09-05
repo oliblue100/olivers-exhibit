@@ -7,13 +7,24 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <canvas id="transition-canvas" style="display:none; position:fixed; top:0; left:0; z-index:9999;"></canvas>
+
+    <button id="menu-btn">=</button>
+
+    <div id="dropdown-menu">
+        <button id="exit_menu">X</button>
+        <a>My Blog</a>
+        <a href=/olivers-exhibit/pages/gallery id="blog-link">The Gallery</a>
+        <a href="pages/wip">Cool Links</a>
+        <a href=/olivers-exhibit/pages/projects>Projects</a>
+        <a href="pages/about">About</a>
+    </div>
+
     <div id="main-container-id" class="main-container">
         <div class="main-panel">
             <h2>Oliver&#39;s Epic Exhibit</h2> 
             <div class="nav-bar">
                 <a>My Blog</a>
-                <a href="pages/gallery" id="blog-link">The Gallery</a>
+                <a href=/olivers-exhibit/pages/gallery id="blog-link">The Gallery</a>
                 <a href="pages/wip">Cool Links</a>
                 <a href=/olivers-exhibit/pages/projects>Projects</a>
                 <a href="pages/about">About</a>
@@ -53,5 +64,33 @@
     </div>
 
 </body>
+
+<script>
+    let isMenuOpen = false;
+    
+    const menuBtn = document.getElementById("menu-btn");
+    const exitMenuBtn = document.getElementById("exit_menu");
+    const mobileMenu = document.getElementById("dropdown-menu");
+
+    function toggleMenu()
+    {
+        if(isMenuOpen)
+        {
+            mobileMenu.style.display = "none";
+            isMenuOpen = false;
+        } else {
+            mobileMenu.style.display = "flex";
+            isMenuOpen = true;
+        }
+    }
+
+    exitMenuBtn.addEventListener("click", ()=>{
+        toggleMenu();
+    });
+
+    menuBtn.addEventListener("click", ()=>{
+        toggleMenu();
+    });
+</script>
 
 </html>

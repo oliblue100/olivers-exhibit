@@ -248,6 +248,52 @@ a:hover
     font-size: .8rem;
 }
 
+#dropdown-menu
+{
+    width:100%;
+    height:100%;
+    background-color:rgba(0, 0, 0, 0.726);
+    position: fixed;
+    right:0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#dropdown-menu button
+{
+    position: fixed;
+    font-size: 2rem;
+    right:10px;
+    top:20px;
+    background:none;
+    border: none;
+}
+
+#dropdown-menu button:hover
+{
+    color:lightgreen;
+    cursor: pointer;
+}
+
+#menu-btn
+{
+    position: fixed;
+    background:none;
+    border: none;
+    font-size: 4rem;
+    right:0;
+    top:15px;
+    display:none;
+}
+
+#menu-btn:hover
+{
+    color:lightgreen;
+    cursor: pointer;
+}
+
 @media (max-width:800px)
 {
     .main-panel
@@ -260,5 +306,25 @@ a:hover
     .version-footer
     {
         display: none;
+    }
+}
+
+@media (max-width:550px)
+{
+
+    #dropdown-menu a
+    {
+        font-size: 1.8rem;
+    }
+
+    #menu-btn
+    {
+        display: inline;
+    }
+
+    .nav-bar *
+    {
+        display: none;
+        background-color: blue;
     }
 }
