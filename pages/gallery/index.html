@@ -40,7 +40,7 @@
                 <button id="gallery-viewer-btn-left">&lt;</button>
             </div>
             <div style="flex-direction:column;display:flex;justify-content: center;align-items: center;">
-                <img id="gallery-view-img" src="../../images/art/doodle1.PNG" style="height:600px;width:auto;">
+                <img id="gallery-view-img" src="/olivers-exhibit/assets/images/art/doodle1.JPG" style="height:600px;width:auto;">
                 <h1 id="gallery-view-title" style="font-size: 1.5rem;">Title</h1>
             </div>
             <div class="gallery-viewer-btn">
@@ -67,8 +67,13 @@
             
         </div>
     </div>
-    
-    <script src=/olivers-exhibit/js/gallery.js></script>
+
+<script>
+    window.ELEVENTY_BASE = "/olivers-exhibit/";
+    window.PAGE = "gallery";
+</script>
+    <!--<script type="module" src="/olivers-exhibit/js/gallery.js"></script>-->
+    <script type="module" src="/olivers-exhibit/js/main.js"></script>
 
 </body>
 </html>
