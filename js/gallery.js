@@ -18,38 +18,9 @@ function switchImage() {
     img.setAttribute("src", currentImage.url);
     title.innerText = currentImage.title;
 }
-const galleryViewerBtnLeft = document.getElementById("gallery-viewer-btn-left");
-const galleryViewerBtnRight = document.getElementById("gallery-viewer-btn-right");
-const galleryViewerBtnClose = document.getElementById("gallery-viewer-close");
-if (galleryViewerBtnLeft != null) {
-    galleryViewerBtnLeft.addEventListener("click", () => {
-        globalImgIndex -= 1;
-        switchImage();
-    });
-}
-if (galleryViewerBtnRight != null) {
-    galleryViewerBtnRight.addEventListener("click", () => {
-        globalImgIndex += 1;
-        switchImage();
-    });
-}
-if (galleryViewerBtnClose != null) {
-    galleryViewerBtnClose.addEventListener("click", () => {
-        const galViewer = document.getElementById("gallery-viewer");
-        if (galViewer != null) {
-            galViewer.classList.toggle("hidden");
-            galViewer.addEventListener("transitionend", () => {
-                if (galViewer.classList.contains("hidden")) {
-                    galViewer.style.display = "none";
-                }
-                else {
-                    return;
-                }
-            });
-        }
-    });
-}
-;
+let galleryViewerBtnLeft;
+let galleryViewerBtnRight;
+let galleryViewerBtnClose;
 async function loadImage(url) {
     return new Promise((resolve, reject) => {
         try {
@@ -131,12 +102,89 @@ async function populateGallery() {
     const gallery_items = gallery_json_data.galleryItems;
     if (gallery_items.length > 0) {
         for (const item of gallery_items) {
+            item.src = `${base}` + item.src;
             await generateAndAppendNewGalleryItem(item.src, item.name, item.positionX, item.positionY, globalImgIndex);
         }
     }
     else {
         console.log("No items found.");
     }
+}
+async function createGalleryViewer() {
+    const InsertElement = document.querySelector('[data-insert="oe-gallery-nav"]');
+    const GalleryNavigatorHTML = `<div id="gallery-viewer" class="hidden" style="display:none;">
+                <div id="gallery-viewer-close" style="position: fixed;font-size: 2rem;right:15px;top:15px;">X</div>
+                <div id="gallery-viewer-nav">
+                    <div class="gallery-viewer-btn">
+                        <button id="gallery-viewer-btn-left">&lt;</button>
+                    </div>
+                    <div style="flex-direction:column;display:flex;justify-content: center;align-items: center;">
+                        <img id="gallery-view-img" src="/olivers-exhibit/assets/images/art/doodle1.JPG" style="height:auto;width:500px;">
+                        <h1 id="gallery-view-title" style="font-size: 1.5rem;">Title</h1>
+                    </div>
+                    <div class="gallery-viewer-btn">
+                        <button id="gallery-viewer-btn-right">&gt;</button>
+                    </div>
+                </div>
+            </div>`;
+    InsertElement.innerHTML = GalleryNavigatorHTML;
+}
+async function createGalleryContainer() {
+    const MainContainer = document.createElement("div");
+    const GalleryTitle = document.createElement("div");
+    const GalleryContainer = document.createElement("div");
+    MainContainer.classList.add("main-container");
+    MainContainer.style.justifyContent = "start";
+    GalleryTitle.style.display = "flex";
+    GalleryTitle.style.alignItems = "center";
+    GalleryTitle.style.justifyContent = "center";
+    GalleryTitle.style.width = "80%";
+    GalleryTitle.style.height = "100%";
+    GalleryTitle.innerHTML = "<h1>The Gallery</h1>";
+    GalleryContainer.id = "gallery-panel";
+    GalleryContainer.classList.add("gallery-panel");
+    MainContainer.append(GalleryTitle);
+    MainContainer.append(GalleryContainer);
+    return MainContainer;
+}
+async function insertGalleryContainer() {
+    const InsertElement = document.querySelector('[data-insert="oe-gallery"]');
+    const NewGalleryElement = await createGalleryContainer();
+    InsertElement.append(NewGalleryElement);
+}
+async function initGlobalVariables() {
+    galleryViewerBtnLeft = document.getElementById("gallery-viewer-btn-left");
+    galleryViewerBtnRight = document.getElementById("gallery-viewer-btn-right");
+    galleryViewerBtnClose = document.getElementById("gallery-viewer-close");
+    if (galleryViewerBtnLeft != null) {
+        galleryViewerBtnLeft.addEventListener("click", () => {
+            globalImgIndex -= 1;
+            switchImage();
+        });
+    }
+    if (galleryViewerBtnRight != null) {
+        galleryViewerBtnRight.addEventListener("click", () => {
+            globalImgIndex += 1;
+            switchImage();
+        });
+    }
+    if (galleryViewerBtnClose != null) {
+        galleryViewerBtnClose.addEventListener("click", () => {
+            const galViewer = document.getElementById("gallery-viewer");
+            if (galViewer != null) {
+                galViewer.classList.toggle("hidden");
+                galViewer.addEventListener("transitionend", () => {
+                    if (galViewer.classList.contains("hidden")) {
+                        galViewer.style.display = "none";
+                    }
+                    else {
+                        return;
+                    }
+                });
+            }
+        });
+    }
+    ;
 }
 async function delay(ms) {
     return new Promise((resolve, reject) => {
@@ -146,6 +194,9 @@ async function delay(ms) {
     });
 }
 export default async function initCode() {
+    await createGalleryViewer();
+    await initGlobalVariables();
+    await insertGalleryContainer();
     await populateGallery();
 }
 //generateAndAppendNewGalleryItem("../../images/art/doodle5.PNG");

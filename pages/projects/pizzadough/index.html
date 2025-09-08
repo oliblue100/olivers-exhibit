@@ -1,44 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Oliver Flatt">
+  <meta name="description" content="Oliver's corner of the internet">
+  <meta property="og:title" content="Oliver's Exhibit">
+  <meta property="og:description" content="Oliver's corner of the internet">
+  <!--<meta property="og:image" content="https://example.com/preview.jpg">-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
   <title></title>
   <link rel="stylesheet" type="text/css" href="/olivers-exhibit/css/style.css">
+  
+
+    
+      <style>
+          @font-face {
+              font-family:ka1;
+              src: url("/olivers-exhibit/assets/fonts/ka1.ttf");
+          }
+
+          @font-face {
+              font-family:GDOS;
+              src: url("/olivers-exhibit/assets/fonts/GoodOldDOS.ttf");
+          }
+
+          @font-face {
+              font-family:dogica;
+              src: url("/olivers-exhibit/assets/fonts/dogica.ttf");
+          }
+
+          html{
+            overflow-y: scroll;
+          }
+      </style>
+
+      
+    
+
 </head>
 <body>
+
+    <div data-insert="oe-nav"></div>
+      
+
   
-    <header style="height:.7in;display: flex;justify-content: center;">
-    <div class="todo-header">
-      <a href="../../">Go back</a>
-    </div>
-    <div class="page-nav" style="display: flex;">
-      <div class="page-nav-container" style="
-        display: flex;
-        height:.5in;
-        ">
-        <ul style="
-          display: flex;
-          justify-content: space-around;
-          padding: 10px;
-          margin: 0;
-          list-style: none;
-          border: solid;
-          text-align: center;
-          width:6.5in;
-          ">
-          <li><a href="/olivers-exhibit/">Home</a></li>
-          <li><a href=/olivers-exhibit/pages/gallery/ id="blog-link">The Gallery</a></li>
-          <li><a href=/olivers-exhibit/pages/wip>Cool Links</a></li>
-          <li><a href="/olivers-exhibit/pages/projects">Projects</a></li>
-          <a href=/olivers-exhibit/pages/about>About</a>
-
-        </ul>
-      </div>
-    </div>
-  </header>
-
-    <div style="display:flex;width:100%;height:100%;justify-content: center;align-items:center;">
-        <div style="width:50%; margin-top:12vh;">
-            <style>
+  <div style="margin:0;padding:0;width:100%; height: fit-content;display: flex;justify-content: center;">
+    <div style="width:100%; max-width:6.5in;margin-left:.3in;margin-right:.3in;padding: 0;">
+        <style>
 #main-container{
     display: flex;
 }
@@ -262,8 +272,17 @@
         return cups * 16;
     }
 </script>
-        </div>
     </div>
+  </div>
+  
 
 </body>
+
+<script>
+    window.ELEVENTY_BASE = "/olivers-exhibit/";
+    
+</script>
+
+
+<script type="module" src="/olivers-exhibit/js/main.js"></script>
 </html>

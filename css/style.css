@@ -1,17 +1,4 @@
-@font-face {
-    font-family:ka1;
-    src: url("../fonts/ka1.ttf");
-}
 
-@font-face {
-    font-family:GDOS;
-    src: url("../fonts/GoodOldDOS.ttf");
-}
-
-@font-face {
-    font-family:dogica;
-    src: url("../fonts/dogica.ttf");
-}
 
 @media print {
     *
@@ -46,6 +33,16 @@ body{
     background-color: rgb(35, 35, 35);
     margin:0;
     padding:0;
+}
+
+header
+{
+    display:none;
+}
+
+.no-scroll
+{
+    overflow:hidden;
 }
 
 h2
@@ -215,13 +212,12 @@ a:hover
 
 .todo-header
 {
-    padding:20px;
+    padding:14px;
     position: absolute;
     left:0;
     top: 0;
     font-weight: 100;
     font-size: .8rem;
-    width:20vw;
     font-size: .6rem;
 }
 .todo-header li, .todo-header ul
@@ -251,7 +247,7 @@ a:hover
 #dropdown-menu
 {
     width:100%;
-    height:100%;
+    height:100vh;
     background-color:rgba(0, 0, 0, 0.726);
     position: fixed;
     right:0;
@@ -259,6 +255,7 @@ a:hover
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    z-index: 4;
 }
 
 #dropdown-menu button
@@ -277,9 +274,8 @@ a:hover
     cursor: pointer;
 }
 
-#menu-btn
+#nav-mobile-btn
 {
-    position: fixed;
     background:none;
     border: none;
     font-size: 4rem;
@@ -292,6 +288,80 @@ a:hover
 {
     color:lightgreen;
     cursor: pointer;
+}
+
+[data-insert="oe-nav"]
+{
+    position: sticky;
+    top:0;
+    z-index:1;
+}
+
+[data-insert="oe-nav"].index
+{
+    display: none;
+}
+
+.nav-container
+{
+    width:100%;
+    height:.7in;
+    background-color:rgb(44, 44, 44);
+    display: flex;
+    justify-content: center;
+}
+
+.nav-container li
+{
+display: flex;
+align-items: center;
+}
+
+.nav-list-container
+{
+width:6.5in;
+display: flex;
+justify-content: center;
+}
+
+.nav-ul
+{
+padding:0;
+list-style:none;
+display: flex;
+width: 100%;
+justify-content: space-between;
+}
+
+.nav-mobile-btn
+{
+position: absolute;
+left:0;
+height: 100%;
+aspect-ratio: 1;
+font-size: 4rem;
+background: none;
+border: 0;
+display:none;
+z-index: 5;
+}
+
+.nav-mobile-button:hover
+{
+cursor:pointer;
+}
+
+@media (max-width:1000px)
+{
+    .nav-container
+    {
+        justify-content: end;
+    }
+
+    .nav-ul
+    {
+        justify-content: space-around;
+    }
 }
 
 @media (max-width:800px)
@@ -307,6 +377,59 @@ a:hover
     {
         display: none;
     }
+
+    .nav-ul
+    {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .nav-ul a
+    {
+        font-size: 1.2rem;
+    }
+
+    .nav-mobile-btn
+    {
+        display:inline;
+    }
+
+    .nav-list-container
+    {
+        width:100%;
+        background-color: rgb(44, 44, 44);
+        height:0in;
+        z-index: 4;
+        position:absolute;
+        top:.7in;
+        transition: height ease .6s;
+    }
+
+    .button
+    {
+        display:none;
+    }
+
+    .nav-list-container.show
+    {
+        height:3.5in;
+        transition: height ease .6s;
+    }
+
+    .hide a
+    {
+        display:none;
+    }
+
+    [data-insert="oe-nav"].index
+    {
+        display: inline;
+        position:fixed;
+        width:100%;
+        height:.7in;
+    }
 }
 
 @media (max-width:550px)
@@ -317,14 +440,19 @@ a:hover
         font-size: 1.8rem;
     }
 
-    #menu-btn
+    header
     {
-        display: inline;
+        display: flex;
     }
 
     .nav-bar *
     {
         display: none;
         background-color: blue;
+    }
+
+    .todo-header
+    {
+        display:none;
     }
 }

@@ -1,79 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery</title>
-    <link rel="stylesheet" type="text/css" href="../../css/style.css">
-    <link rel="stylesheet" type="text/css" href="../../css/gallery.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Oliver Flatt">
+  <meta name="description" content="Oliver's corner of the internet">
+  <meta property="og:title" content="Oliver's Exhibit">
+  <meta property="og:description" content="Oliver's corner of the internet">
+  <!--<meta property="og:image" content="https://example.com/preview.jpg">-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="/olivers-exhibit/css/style.css">
+  
+
+    
+    
+      <style>
+          @font-face {
+              font-family:ka1;
+              src: url("/olivers-exhibit/assets/fonts/ka1.ttf");
+          }
+
+          @font-face {
+              font-family:GDOS;
+              src: url("/olivers-exhibit/assets/fonts/GoodOldDOS.ttf");
+          }
+
+          @font-face {
+              font-family:dogica;
+              src: url("/olivers-exhibit/assets/fonts/dogica.ttf");
+          }
+
+          html{
+            overflow-y: scroll;
+          }
+      </style>
+
+      
+    
+    <link type="text/css" rel="stylesheet" href="/olivers-exhibit/css/gallery.css">
+
 
 </head>
 <body>
-    <div class="page-nav" style="display: flex; justify-content: center;">
-      <div class="page-nav-container" style="
-        display: flex;
-        height:.5in;
-        ">
-        <ul style="
-          display: flex;
-          justify-content: space-around;
-          padding: 10px;
-          margin: 0;
-          list-style: none;
-          border: solid;
-          text-align: center;
-          width:6.5in;
-          ">
-          <li><a href="/olivers-exhibit/">Home</a></li>
-          <li><a href=/olivers-exhibit/pages/gallery/ id="blog-link">The Gallery</a></li>
-          <li><a href=/olivers-exhibit/pages/wip>Cool Links</a></li>
-          <li><a href=/olivers-exhibit/pages/projects/>Projects</a></li>
-          <a href=/olivers-exhibit/pages/about>About</a>
 
-        </ul>
-      </div>
-    </div>
-    <div id="gallery-viewer" class="hidden" style="display:none;">
-        <div id="gallery-viewer-close" style="position: fixed;font-size: 2rem;right:15px;top:15px;">X</div>
-        <div id="gallery-viewer-nav">
-            <div class="gallery-viewer-btn">
-                <button id="gallery-viewer-btn-left">&lt;</button>
-            </div>
-            <div style="flex-direction:column;display:flex;justify-content: center;align-items: center;">
-                <img id="gallery-view-img" src="/olivers-exhibit/assets/images/art/doodle1.JPG" style="height:600px;width:auto;">
-                <h1 id="gallery-view-title" style="font-size: 1.5rem;">Title</h1>
-            </div>
-            <div class="gallery-viewer-btn">
-                <button id="gallery-viewer-btn-right">&gt;</button>
-            </div>
-        </div>
+    <div data-insert="oe-nav"></div>
+      
 
+  
         
-        </div>
-    <div class="todo-header">
-        <a href="../../">Go back</a>
-    </div>
-    <div class="main-container" style="justify-content:start;">
-        <div style="
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            width:80%;
-            height:100px;">
-            <h1>The Gallery</h1>
-        </div>
-        <div id="gallery-panel" class="gallery-panel">
-            
-            
-        </div>
-    </div>
+    <div data-insert="oe-gallery-nav"></div>
+    
+    <div data-insert="oe-gallery"></div>
+
+  
+
+</body>
 
 <script>
     window.ELEVENTY_BASE = "/olivers-exhibit/";
     window.PAGE = "gallery";
 </script>
-    <!--<script type="module" src="/olivers-exhibit/js/gallery.js"></script>-->
-    <script type="module" src="/olivers-exhibit/js/main.js"></script>
 
-</body>
+
+<script type="module" src="/olivers-exhibit/js/main.js"></script>
 </html>
