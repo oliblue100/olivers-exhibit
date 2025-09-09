@@ -1,13 +1,5 @@
 
 
-@media print {
-    *
-    {
-        background:none;
-        color:rgb(0, 0, 0);
-    }
-}
-
 #transition-canvas {
   position: fixed;
   top: 0;
@@ -454,5 +446,13 @@ cursor:pointer;
     .todo-header
     {
         display:none;
+    }
+}
+
+@media print {
+    *
+    {
+        background:none;
+        color:rgb(0, 0, 0);
     }
 }

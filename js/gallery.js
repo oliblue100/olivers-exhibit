@@ -98,7 +98,7 @@ async function getJsonGalleryData(url) {
         }).catch(error=>{reject(error)});*/
 }
 async function populateGallery() {
-    const gallery_json_data = await getJsonGalleryData(`${base}/assets/data/gallery_data.json`);
+    const gallery_json_data = await getJsonGalleryData(`${base}assets/data/gallery_data.json`);
     const gallery_items = gallery_json_data.galleryItems;
     if (gallery_items.length > 0) {
         for (const item of gallery_items) {
@@ -119,7 +119,7 @@ async function createGalleryViewer() {
                         <button id="gallery-viewer-btn-left">&lt;</button>
                     </div>
                     <div style="flex-direction:column;display:flex;justify-content: center;align-items: center;">
-                        <img id="gallery-view-img" src="/olivers-exhibit/assets/images/art/doodle1.JPG" style="height:auto;width:500px;">
+                        <img id="gallery-view-img" src="${base}assets/images/art/doodle1.JPG" style="height:auto;width:500px;">
                         <h1 id="gallery-view-title" style="font-size: 1.5rem;">Title</h1>
                     </div>
                     <div class="gallery-viewer-btn">
